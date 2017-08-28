@@ -7910,5 +7910,8 @@ a.text-dark:focus, a.text-dark:hover {
   visibility: hidden!important
 }
 
+.music-seperator{
+  border: 1px black;
+}
 
 /*# sourceMappingURL=bootstrap.min.css.map */

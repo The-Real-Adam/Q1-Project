@@ -6,9 +6,9 @@
   <title>Sounds and Suds</title>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/beerAPI.js"></script>
-  <script type="text/javascript" src="js/spotifyAPI.js"></script>
+  <script type="text/javascript" src="js/spotifiyAPI.js"></script>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  </script>
+
 
 </head>
 
@@ -16,26 +16,74 @@
   <!-- Navbar -->
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
-      <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
       Sounds and Suds
     </a>
   </nav>
 
   <div class="container">
-    <!-- Row 1 -->
-    <div class="row">
+    <!-- Adds a space between nav bar and inputs -->
+    <br>
+    <!-- Row 1 Pictures here-->
+    <div class="row justify-content-md-center">
+      <!-- left button searchgroup -->
+      <div class="col-md-auto">
+        <div class="input-group">
+          <form>
+          <span class="input-group-btn">
+          <input type="text" class="form-control" placeholder="Search for your music" aria-label="Search for..."></input>
+          <input type="text" class="form-control" placeholder="Search for your beer" aria-label="Search for..."></input>
+          </span>
+          </form>
+          <!-- <span class="input-group-btn">
+            <button class="btn btn-secondary" id="albumSearch" type="button">Go!</button>
+          </span> -->
+        </div>
+      </div>
 
+      <!-- right button search group -->
+      <!-- <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" id="beerSearch" type="button">Go!</button>
+          </span>
+          <input type="text" class="form-control" placeholder="Search for your beer" aria-label="Search for...">
+        </div>
+      </div> -->
     </div>
+    <!-- adds space between rows -->
+    <br>
 
-    <!-- Row 2 -->
+    <!-- Row 2 Input Feilds-->
     <div class="row">
-      <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Album</button>
-        <button type="button" class="btn btn-secondary">Random</button>
-        <button type="button" class="btn btn-secondary">Beer</button>
+      <div class="col-lg-6 music-seperator">
+        <div class="text-center">
+          <img src="http://placekitten.com/g/300/300" class="rounded" alt="..." width="" height="">
+        </div>
+      </div>
+      <div class="col-lg-6 music-seperator">
+        <div>
+          <div class="text-center">
+            <img src="http://placekitten.com/g/300/300" class="rounded" alt="..." width="" height="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- adds space between rows -->
+    <br>
+
+    <!-- Row 3 Buttons for Re randomizing-->
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <div class="btn-group col-md-auto" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary" id="albumRandom">I like the Beer but want another Album</button>
+          <button type="button" class="btn btn-secondary" id="beerRandom albumRandom">Both of these suck, try again</button>
+          <button type="button" class="btn btn-secondary" id="beerRandom">I like the Album but want another Beer</button>
+        </div>
       </div>
     </div>
   </div>
+
 </body>
 
 </html>
