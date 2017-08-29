@@ -37,8 +37,8 @@
             <span class="input-group-btn">
           <input type="text" class="form-control" placeholder="Search for your music" id="albumSearch" aria-label="Search for...">
             <button class="btn btn-secondary rock-salt" id="albumSearch beerSearch" type="submit">Go!</button>
-          <!-- <input type="select" class="form-control" placeholder="Search for your beer" id="beerSearch" aria-label="Search for..."> -->
-          <select id="beerSearch">
+          <input type="select" class="form-control" placeholder="Search for your beer" id="beerSearch" aria-label="Search for...">
+          <!-- <select id="beerSearch">
             <option value="30">IPA</option>
             <option value="31">Double IPA</option>
             <option value="93">Lager</option>
@@ -53,7 +53,7 @@
             <option value="127">Gluten Free Beers</option>
             <option value="149">Cider</option>
             <option value="125">Specialty</option>
-          </select>
+          </select> -->
           </span>
           </form>
         </div>
@@ -65,19 +65,39 @@
 
     <!-- Row 2 Input Feilds-->
     <div class="row">
-      <div class="col-lg-6 music-seperator" id="albumPlace">
-        <div class="text-center">
-          <img src="http://www.clker.com/cliparts/8/Y/e/9/k/W/music-icon-md.png" class="rounded" alt="..." width="" height="">
+      <div class="card-deck">
+        <div class="card MyAlbum">
+          <img class="card-img-top" src="http://www.clker.com/cliparts/8/Y/e/9/k/W/music-icon-md.png" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title MyAlbumName">Music</h4>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-6 music-seperator" id="beerPlace">
-        <div>
-          <div class="text-center">
-            <img src="http://www.goeuro.com/images/images/BPI/beer-icon-yellow.png" class="rounded" alt="..." width="" height="">
+        <div class="card MyBeer">
+          <img class="card-img-top" src="http://www.goeuro.com/images/images/BPI/beer-icon-yellow.png" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title MyBeerName">Beer</h4>
+            <p class="card-text MyBeerDesc">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted MyBeerABV">Last updated 3 mins ago</small></p>
           </div>
         </div>
       </div>
     </div>
+      <!-- <div class="col-lg-6 music-seperator" id="albumPlace">
+        <div class="text-center">
+          <ul class="results">
+            <img src="http://www.clker.com/cliparts/8/Y/e/9/k/W/music-icon-md.png" class="rounded" alt="..." width="" height="">
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6 music-seperator" id="beerPlace">
+        <div class="text-center">
+          <img src="http://www.goeuro.com/images/images/BPI/beer-icon-yellow.png" class="rounded" alt="..." width="" height="">
+        </div>
+      </div>
+    </div> -->
     <!-- adds space between rows -->
     <br>
 
@@ -92,6 +112,7 @@
       </div>
     </div>
   </div>
+  <br>
 
 </body>
 
