@@ -4,11 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>Sounds and Suds</title>
-  <script type="text/javascript"src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/beerAPI.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/myscripts.js"></script>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <style>@import url('https://fonts.googleapis.com/css?family=Rock+Salt');</style>
-  <style>@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');</style>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+  </style>
 
 </head>
 
@@ -33,7 +37,23 @@
             <span class="input-group-btn">
           <input type="text" class="form-control" placeholder="Search for your music" id="albumSearch" aria-label="Search for...">
             <button class="btn btn-secondary rock-salt" id="albumSearch beerSearch" type="submit">Go!</button>
-          <input type="text" class="form-control" placeholder="Search for your beer" id="beerSearch" aria-label="Search for...">
+          <!-- <input type="select" class="form-control" placeholder="Search for your beer" id="beerSearch" aria-label="Search for..."> -->
+          <select id="beerSearch">
+            <option value="30">IPA</option>
+            <option value="31">Double IPA</option>
+            <option value="93">Lager</option>
+            <option value="98">Pilsner</option>
+            <option value="42">American Style Stout</option>
+            <option value="21">Oatmeal Stout</option>
+            <option value="40">Sour Ale</option>
+            <option value="45">Kolsch</option>
+            <option value="48">Hefeweizen</option>
+            <option value="108">Session</option>
+            <option value="112">Light Wheat</option>
+            <option value="127">Gluten Free Beers</option>
+            <option value="149">Cider</option>
+            <option value="125">Specialty</option>
+          </select>
           </span>
           </form>
         </div>
