@@ -3,9 +3,12 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Sounds and Suds</title>
+  <title>Brews & Beats</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/myscripts.js"></script>
+  <script type="text/javascript" src="js/bootstrapJS/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrapJS/bootstrap.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
@@ -21,7 +24,7 @@
   <nav class="navbar navbar-light bg-light rock-salt">
     <a class="navbar-brand" href="#">
       <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
-      <h3>Sounds & Suds</h3>
+      <h3>Hits & Hops</h3>
     </a>
   </nav>
 
@@ -37,7 +40,29 @@
             <span class="input-group-btn">
           <input type="text" class="form-control" placeholder="Search for your music" id="albumSearch" aria-label="Search for...">
             <button class="btn btn-secondary rock-salt" id="albumSearch beerSearch" type="submit">Go!</button>
-          <input type="select" class="form-control" placeholder="Search for your beer" id="beerSearch" aria-label="Search for...">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Your Beer Style
+              </button>
+              <div id="beerSearch" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button" value="30">IPA</button>
+                <button class="dropdown-item" type="button" value="31">Double IPA</button>
+                <button class="dropdown-item" type="button" value="93">Lager</button>
+                <button class="dropdown-item" type="button" value="98">Pilsner</button>
+                <button class="dropdown-item" type="button" value="42">American Style Stout</button>
+                <button class="dropdown-item" type="button" value="21">Oatmeal Stout</button>
+                <button class="dropdown-item" type="button" value="40">Sour Ale</button>
+                <button class="dropdown-item" type="button" value="45">Kolsch</button>
+                <button class="dropdown-item" type="button" value="48">Hefeweizen</button>
+                <button class="dropdown-item" type="button" value="108">Session</button>
+                <button class="dropdown-item" type="button" value="112">Light Wheat</button>
+                <button class="dropdown-item" type="button" value="127">Gluten Free Beers</button>
+                <button class="dropdown-item" type="button" value="149">Cider</button>
+                <button class="dropdown-item" type="button" value="125">Specialty Beers</button>
+              </div>
+            </div>
+          <!-- <input type="select" class="form-control" placeholder="Search for your beer" id="beerSearch" aria-label="Search for..."> -->
+
           <!-- <select id="beerSearch">
             <option value="30">IPA</option>
             <option value="31">Double IPA</option>
@@ -65,48 +90,37 @@
 
     <!-- Row 2 Input Feilds-->
     <div class="row">
-      <div class="card-deck">
-        <div class="card MyAlbum">
-          <img class="card-img-top" src="http://www.clker.com/cliparts/8/Y/e/9/k/W/music-icon-md.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title MyAlbumName">Music</h4>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <div class="card-deck justify-content-center">
+        <div class="col-5">
+          <div class="card MyAlbum">
+            <img class="card-img-top MyAlbumImage" src="http://www.clker.com/cliparts/8/Y/e/9/k/W/music-icon-md.png" alt="Card image cap">
+            <div class="card-body MyAlbum">
+              <h4 class="card-title">Music</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
           </div>
         </div>
-        <div class="card MyBeer">
-          <img class="card-img-top" src="http://www.goeuro.com/images/images/BPI/beer-icon-yellow.png" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title MyBeerName">Beer</h4>
-            <p class="card-text MyBeerDesc">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted MyBeerABV">Last updated 3 mins ago</small></p>
+
+        <div class="col-5">
+          <div class="card MyBeer">
+            <img class="card-img-top MyBeerImage" src="http://www.goeuro.com/images/images/BPI/beer-icon-yellow.png" alt="Card image cap">
+            <div class="card-body MyBeer">
+              <h4 class="card-title">Beer</h4>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-      <!-- <div class="col-lg-6 music-seperator" id="albumPlace">
-        <div class="text-center">
-          <ul class="results">
-            <img src="http://www.clker.com/cliparts/8/Y/e/9/k/W/music-icon-md.png" class="rounded" alt="..." width="" height="">
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-lg-6 music-seperator" id="beerPlace">
-        <div class="text-center">
-          <img src="http://www.goeuro.com/images/images/BPI/beer-icon-yellow.png" class="rounded" alt="..." width="" height="">
-        </div>
-      </div>
-    </div> -->
-    <!-- adds space between rows -->
     <br>
-
     <!-- Row 3 Buttons for Re randomizing-->
     <div class="row justify-content-md-center">
       <div class="col-md-auto">
         <div class="btn-group col-md-auto" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-secondary" id="albumRandom">I like the Beer but want another Album</button>
-          <button type="button" class="btn btn-secondary" id="beerRandom albumRandom">Both of these suck, try again</button>
+          <button type="button" class="btn btn-secondary" id="redoBoth">Both of these suck, try again</button>
           <button type="button" class="btn btn-secondary" id="beerRandom">I like the Album but want another Beer</button>
         </div>
       </div>
