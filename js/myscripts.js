@@ -98,7 +98,7 @@ $(document).ready(function() {
             method: 'GET',
             dataType: 'JSON',
             headers: {
-              Authorization: "Bearer BQBxRAMtNwlJ6429cR3vieVf17I-91qMUrMB4ASp__lhzkSbtT-m3Vo33T1yP5a27SGgg_XHRor7E_s4_xSrGaPTK4ozK-kmEMi9b4xsGocOlVNtbI9DEOmU2m4rO_xTqN06YzrzHA"
+              Authorization: "Bearer BQDAyuyw2fvDiFTsjVFMyt4cCsNxWPpk8Dln6JMDHuMQaPgUbp7KMtXw_LG_fh8DiaR0DjnuwKOdYZll22QCnn46jL0wuw7MMIWtatOuBSfqHEdRX1chSNBocw7s7ABwXKOCrTEstw"
             },
             data: {
               q: `artist:${albumSearch}`,
@@ -128,20 +128,20 @@ $(document).ready(function() {
         let displayedAlbumUrl = displayedAlbum.href
         let displayedAlbumName = displayedAlbum.name
         let displayedAlbumImageUrl = displayedAlbum.images ? displayedAlbum.images[0].url : ''
+        let displayedAlbumArtist =displayedAlbum.artists.name
+        console.log("Album data to be rendered: ", displayedAlbumUrl, displayedAlbumName, displayedAlbumImageUrl, displayedAlbumArtist);
 
-        console.log("Album data to be rendered: ", displayedAlbumUrl, displayedAlbumName, displayedAlbumImageUrl);
-
-        renderAlbum(displayedAlbumUrl, displayedAlbumName, displayedAlbumImageUrl)
+        renderAlbum(displayedAlbumUrl, displayedAlbumName, displayedAlbumImageUrl,displayedAlbumArtist)
 
       }
 
       // add an album to the result UL
-      function renderAlbum(displayedAlbumUrl, displayedAlbumName, displayedAlbumImageUrl) {
+      function renderAlbum(displayedAlbumUrl, displayedAlbumName, displayedAlbumImageUrl,displayedAlbumArtist) {
         let albumCard = $('div.MyAlbum')
         let albumCardInfo = $('<div>').append(`
            <img class="card-img-top MyAlbumImage" src="${displayedAlbumImageUrl}" alt="Card image cap">
            <div class="card-body MyAlbum">
-             <h4 class="card-title">${albumSearch}</h4>
+             <h4 class="card-title">${displayedAlbumArtist}</h4>
              <p class="card-text">Album: ${displayedAlbumName}</p>
              <p class="card-text"><small class="text-muted">Enjoy!</small></p>
            </div>
