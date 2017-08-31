@@ -18,7 +18,7 @@ $(document).ready(function() {
 
         // Album search term  -- gets artist from input feild
         var albumSearch = $("#albumSearch").val().trim();
-        // console.log("albumSearch is ", albumSearch)
+        console.log("albumSearch is ", albumSearch)
         getAlbums(albumSearch)
       });
 
@@ -65,7 +65,7 @@ $(document).ready(function() {
         let displayedBeerName = displayedBeer.name
         let displayedBeerABV = displayedBeer.abv
         let displayedBeerDesc = displayedBeer.description
-        let displayedBeerLabel = displayedBeer.labels.medium || `http://placekitten.com/g/300/300`
+        let displayedBeerLabel = displayedBeer.labels !== undefined ? displayedBeer.labels.medium : `http://placekitten.com/g/300/300`
 
         console.log("Beer Data to be rendered: ", displayedBeerName, displayedBeerABV, displayedBeerDesc, displayedBeerLabel)
 
@@ -98,12 +98,12 @@ $(document).ready(function() {
             method: 'GET',
             dataType: 'JSON',
             headers: {
-              Authorization: "Bearer BQDAyuyw2fvDiFTsjVFMyt4cCsNxWPpk8Dln6JMDHuMQaPgUbp7KMtXw_LG_fh8DiaR0DjnuwKOdYZll22QCnn46jL0wuw7MMIWtatOuBSfqHEdRX1chSNBocw7s7ABwXKOCrTEstw"
+              Authorization: "Bearer BQAeLlCaa1hGImFLYEkcoub4pP0xUL-1CDvJWTy-cUlBGCaeGHYNJGo0f_Rw6gxH7CytvnyfZ0EMzZBNeNBM1EDO1F1jk0O31R0DoVh_lkxdr1nacAkxTpOd6_NEyDinYhpL7B2y0w"
             },
             data: {
               q: `artist:${albumSearch}`,
               type: "album",
-              limit: 18
+              limit: 50
             }
           }).done((responseAlbum) => {
             console.log("Spotify response: ", responseAlbum.albums.items)
@@ -125,10 +125,10 @@ $(document).ready(function() {
         console.log("parsing displayedAlbum:", displayedAlbum)
 
         // go through albums, extract the url, name and image, then render
-        let displayedAlbumUrl = displayedAlbum.href
+        let displayedAlbumUrl = displayedAlbum.external_urls.spotify
         let displayedAlbumName = displayedAlbum.name
         let displayedAlbumImageUrl = displayedAlbum.images ? displayedAlbum.images[0].url : ''
-        let displayedAlbumArtist =displayedAlbum.artists.name
+        let displayedAlbumArtist = displayedAlbum.artists[0].name
         console.log("Album data to be rendered: ", displayedAlbumUrl, displayedAlbumName, displayedAlbumImageUrl, displayedAlbumArtist);
 
         renderAlbum(displayedAlbumUrl, displayedAlbumName, displayedAlbumImageUrl,displayedAlbumArtist)
@@ -143,7 +143,7 @@ $(document).ready(function() {
            <div class="card-body MyAlbum">
              <h4 class="card-title">${displayedAlbumArtist}</h4>
              <p class="card-text">Album: ${displayedAlbumName}</p>
-             <p class="card-text"><small class="text-muted">Enjoy!</small></p>
+             <p class="card-text"><small class="text-muted"> <a href=${displayedAlbumUrl} target="_blank">Listen Here</a></small></p>
            </div>
       `)
 
