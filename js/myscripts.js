@@ -88,7 +88,7 @@ $(document).ready(function() {
       // Album search function
       function getAlbums(albumSearch) {
         // console.log("getting album info", albumSearch);
-
+        var token = localStorage.getItem('access_token')
         // the ajax call
         // client ID 031b1f06c0c2483cb3939e84b632e3da
         // client secret 64d8620a69614ae0aff51ce29f2a7d36
@@ -98,7 +98,7 @@ $(document).ready(function() {
             method: 'GET',
             dataType: 'JSON',
             headers: {
-              Authorization: "Bearer BQAeLlCaa1hGImFLYEkcoub4pP0xUL-1CDvJWTy-cUlBGCaeGHYNJGo0f_Rw6gxH7CytvnyfZ0EMzZBNeNBM1EDO1F1jk0O31R0DoVh_lkxdr1nacAkxTpOd6_NEyDinYhpL7B2y0w"
+              Authorization: "Bearer "+ token
             },
             data: {
               q: `artist:${albumSearch}`,
@@ -115,6 +115,26 @@ $(document).ready(function() {
           })
 
           .fail((err) => {
+            console.log("FAIL");
+            // check local storage for token and if it doesnt exist.
+            var token = localStorage.getItem('access_token')
+            if (!token) {
+              // makes key value pairs and accumulates them here
+              let urlParams = {}
+
+              window.location.href.replace(/^.*#/, '').split('&').map(elem => elem.split('=')).map(arr => urlParams[arr[0]] = arr[1])
+              // show our params here
+              console.log(urlParams);
+              // gets the token from online
+              token = urlParams.access_token
+              if(token !== undefined){
+              localStorage.setItem('access_token', token)
+            }
+
+            }
+
+            $("#accesstoken").html(token)
+
             console.log("a bad thing happened with getting albums", err)
           })
 
@@ -149,5 +169,14 @@ $(document).ready(function() {
 
           albumCard.html(albumCardInfo)
         }
+
+
+
+
+
+
+
+
+
 
       }); //end of document.ready
