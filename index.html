@@ -6,9 +6,8 @@
   <title>Brews & Beats</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/myscripts.js"></script>
-  <script type="text/javascript" src="js/bootstrapJS/popper.min.js"></script>
-  <script type="text/javascript" src="js/bootstrapJS/bootstrap.min.js"></script>
-
+  <script type="text/javascript" src="js/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
@@ -38,13 +37,28 @@
         <div class="input-group">
           <form>
             <span class="input-group-btn">
-          <input type="text" class="form-control" placeholder="Search for your music" id="albumSearch" aria-label="Search for...">
+          <input type="text" class="form-control" placeholder="Choose an Artist" id="albumSearch" aria-label="Search for...">
+
             <button class="btn btn-secondary rock-salt" id="albumSearch beerSearch" type="submit">Go!</button>
+
+
+            <!-- <div class="btn-group">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                This dropdown's menu is right-aligned
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <button class="dropdown-item" type="button">Action</button>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button">Something else here</button>
+              </div>
+            </div> -->
+
+
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choose Your Beer Style
+              Choose Your Beer Style
               </button>
-              <div id="beerSearch" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="beerSearch">
                 <button class="dropdown-item" type="button" value="30">IPA</button>
                 <button class="dropdown-item" type="button" value="31">Double IPA</button>
                 <button class="dropdown-item" type="button" value="93">Lager</button>
@@ -61,24 +75,6 @@
                 <button class="dropdown-item" type="button" value="125">Specialty Beers</button>
               </div>
             </div>
-          <!-- <input type="select" class="form-control" placeholder="Search for your beer" id="beerSearch" aria-label="Search for..."> -->
-
-          <!-- <select id="beerSearch">
-            <option value="30">IPA</option>
-            <option value="31">Double IPA</option>
-            <option value="93">Lager</option>
-            <option value="98">Pilsner</option>
-            <option value="42">American Style Stout</option>
-            <option value="21">Oatmeal Stout</option>
-            <option value="40">Sour Ale</option>
-            <option value="45">Kolsch</option>
-            <option value="48">Hefeweizen</option>
-            <option value="108">Session</option>
-            <option value="112">Light Wheat</option>
-            <option value="127">Gluten Free Beers</option>
-            <option value="149">Cider</option>
-            <option value="125">Specialty</option>
-          </select> -->
           </span>
           </form>
         </div>
@@ -97,7 +93,10 @@
             <div class="card-body MyAlbum">
               <h4 class="card-title">Music</h4>
               <p class="card-text">Do you Like music? Of course you do, this is where your album will appear.</p>
-              <p class="card-text"><small class="text-muted"><a href="https://accounts.spotify.com/authorize?client_id=031b1f06c0c2483cb3939e84b632e3da&redirect_uri=http%3A%2F%2Findex.html&scope=user-read-private%20user-read-email&response_type=token&state=123">Login with Spotify</a></small></p>
+              <p class="card-text"><small class="text-muted"><a href="https://accounts.spotify.com/authorize?client_id=031b1f06c0c2483cb3939e84b632e3da&redirect_uri=http%3A%2F%2Fhits-hops.surge.sh&scope=user-read-private%20user-read-email&response_type=token&state=123">Login with Spotify</a></small></p>
+
+              <!-- <p class="card-text"><small class="text-muted"><a href="https://accounts.spotify.com/authorize?client_id=031b1f06c0c2483cb3939e84b632e3da&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Finde.html&scope=user-read-private%20user-read-email&response_type=token&state=123">Login with Spotify</a></small></p> -->
+
             </div>
           </div>
         </div>

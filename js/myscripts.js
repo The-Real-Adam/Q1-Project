@@ -29,6 +29,7 @@ $(document).ready(function() {
 
       // add album event listener
       $('#albumRandom').click(function(event) {
+        console.log("submitting album random: ", albumSearch)
         getAlbums(albumSearch)
       })
 
@@ -118,7 +119,7 @@ $(document).ready(function() {
             console.log("FAIL");
             // check local storage for token and if it doesnt exist.
             var token = localStorage.getItem('access_token')
-            if (!token) {
+            if (!token || status !== 200) {
               // makes key value pairs and accumulates them here
               let urlParams = {}
 
